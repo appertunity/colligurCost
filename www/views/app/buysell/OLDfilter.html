@@ -1,0 +1,32 @@
+<ion-modal-view class="modal-view" >
+    <ion-header-bar >
+        <a class="button button-clear" ng-click="filter.hide()"><span class="icon close-popup ion-arrow-left-a">Back</span> </a>
+        <h1 class="title modal-title" style="text-align: center;">Search</h1>
+           </ion-header-bar>
+    <ion-content class="padding" >
+        <div  class="row">
+            <div class="col">
+                <div class="privacy-policy">
+                    <form ng-submit="submitLogin()">
+                        <input id="entry1" ng-model="id_entry"  type="text" >
+
+                        <button type="submit" class="button" ng-click="idSubmit()">
+                            Login</button>
+                    </form>
+
+
+                    <ion-item>  <label class="item item-input">
+                        <span class="input-label" style="width: 10%;"><span class="ion-search ion"></span></span>
+                        <input type="text" ng-model="input.filtercategory" placeholder="Search"  ng-keyup="text"/>
+                    </label>
+
+
+
+                    </ion-item>
+                    <ion-item ng-show="false" ng-repeat="cat in (categories ? (categories | filter:{title :input.filtercategory }) : [])" ng-click="getItem(cat.id)">{{cat.title}}</ion-item>
+                 </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>
+

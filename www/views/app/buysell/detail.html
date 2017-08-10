@@ -1,0 +1,58 @@
+<ion-view view-title="Detail Page" class="product-view">
+  <ion-nav-buttons side="right"  >
+    <div  ui-sref="app.buysell-add">
+    <button menu-toggle="right"  class="button button-icon  ion-plus-circled"   style="color: #FFF;"> POST FREE ADD</button>
+    </div>
+  </ion-nav-buttons>
+
+  <ion-content overflow-scroll="true">
+    <div class="product-card-content">
+      <div class="item item-image">
+        <pre-img ratio="_1_1" helper-class="main-image">
+          <img ng-src="https://www.colligur.com/buysell_images/{{product[0].picture}}" spinner-on-load>
+        </pre-img>
+      </div>
+
+      <div class="item item-body">
+        <h2 class="product-title">{{product[0].title}}</h2>
+        <p class="product-price" ng-click="showAddToCartPopup(product)">{{ product[0].price ? '$'+product[0].price : 'Please Contact' }}</p>
+
+        <div>
+          <div>
+            <p class="product-like"><i class="icon ion-android-time"></i>{{product[0].created_at}}</p>
+            <p class="product-like"><i class="icon ion-android-phone-portrait"></i>{{product[0].phone_no}}</p>
+
+          </div>
+         </div>
+        <div>
+        <div>
+          <p class="product-like"><i class="icon ion-location"></i>{{product[0].address}}</p>
+
+        </div>
+
+        </div>
+        </div>
+      <div class="item item-body">
+        <p class="product-description">{{product[0].buy_desc}}</p>
+      </div>
+    </div>
+    <div class="item item-divider shop-section-title">
+      <span class="title-copy">Related Products</span>
+    </div>
+    <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
+      <div ng-repeat="related_product in related_products" class="col col-50 shop-product-narrow-card" ui-sref="app.buysell-detail({productId: related_product.id})">
+          <div class="list card">
+          <div class="item item-image">
+            <pre-img ratio="_1_1" helper-class="main-image">
+              <img ng-src="https://www.colligur.com/buysell_images/{{related_product.picture}}" spinner-on-load>
+            </pre-img>
+          </div>
+          <div class="item item-body">
+            <h2 class="card-title">{{related_product.title}}</h2>
+            <p class="card-description"><b>${{related_product.price}}</b> - {{related_product.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

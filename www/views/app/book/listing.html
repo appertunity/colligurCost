@@ -1,0 +1,24 @@
+<ion-view view-title="Books" class="book-listing-view">
+    <ion-nav-buttons side="right"  >
+        <div >
+            <i menu-toggle="right"  ng-click="openFilter()" class="button button-icon ion-search"   style="color: #FFF;"> </i>
+        </div>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <div class="notification-message" >
+            <p ng-if="keyword">Matching records for "{{keyword}}"</p>
+            <p >{{total_records.row}} records founds in <a class="rounded-button" ng-click="showBookCategories()">{{catText}} <i class="ion-arrow-down-b"></i></a>   </p>
+        </div>
+    <div class="row shop-products-narrow-cards-outer">
+      <ion-item ng-repeat="product in products | filter:searchText" ui-sref="app.book-detail({productId: product.id})" class="item-thumbnail-left item" style="transform: translate3d(0px, 0px, 0px); height: 120px; width: 100%;">
+         <img  ng-src="{{product.cover}}" >
+        <h2 class="ng-binding">{{product.title}}</h2>
+        <p class="ng-binding">{{product.author}}</p>
+        <p class="ng-binding" ng-if="product.price">{{product.price}} $</p>
+     </ion-item>
+        <a ng-if="products.length  < total_records.row" class="google-sign-in button button-block icon-left ion-arrow-down-b classic_blue" style="width: 100%;" ng-click="loadMore()"><span class="btn-copy">Load More</span>
+       </a>
+    </div>
+  </ion-content>
+</ion-view>

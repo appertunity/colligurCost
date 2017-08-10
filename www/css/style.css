@@ -1,0 +1,112 @@
+.template-control {
+    background-color:#f5f5f5 !important;
+    width: 20px !important;
+    height: 20px;
+    margin: -9px 5px 0px!important;
+    border-radius:100%;
+    border-color: #ddd;
+}
+/*OVERRIDE CSS*/
+.action-sheet .button{
+    color:#111417;
+    font-size: 14px;
+}
+.action-sheet-has-icons .icon{
+    position: relative;
+    left:0px;
+}
+
+.right_xjr{
+    position: absolute;
+    width: 45px;
+    height: 50px;
+    right: 0px;
+    top: 40px;
+}
+
+.right_xjr a {
+    color: #fff;
+    background: transparent;
+    font-size:32px;
+
+}
+
+.select-xjr{
+    text-align: center;
+    padding: 20px 0px;
+}
+.scroll-content {
+    background: rgb(245,245,245);
+}
+
+.popup-container .popup{
+    width:100%;
+    max-height:100%;
+    height:100%;
+
+}
+
+
+.add-to-cart-popup .popup-buttons .close-popup {
+    left:0px;
+}
+
+.platform-android .action-sheet .action-sheet-title, .platform-android .action-sheet .button {
+    text-align: center;
+    padding-left: 0px;
+}
+
+
+.add-to-cart-popup .popup-buttons .close-popup{
+    font-size:15px !important;
+    top:5px
+}
+
+.button.button-block, .button.button-full{
+    border:1px solid #262626;
+    background:#FFF;
+}
+
+
+ion-nav-bar.shop-color ion-header-bar,.tabs-striped.tabs-background-balanced .tabs,.bar-header {
+    background-color:rgb(235,82,75) !important;
+    background:rgb(235,82,75) !important;
+}
+
+.grayish {
+    color: #262626 !important;
+    border-color: #262626 !important;
+
+}
+
+.popup-vertical-buttons button
+{
+    min-width: 100%;
+    margin-bottom: 5px;
+    ;
+}
+.popup-vertical-buttons .popup-buttons
+{
+    display: block;
+}
+
+
+.FBlue{
+    background: #294886 !important;
+    min-height: 40px !important;
+}
+
+
+.notification-message { position: relative; top: 0px; height: 70px; padding-top:10px; width: 100%; min-width: 100%; color: #000; background-color:rgb(233,233,233);padding-left: 11px;  vertical-align: middle; }
+
+.rounded-button{
+    color: #000;
+    padding:8px;
+
+
+}
+
+.classic_blue {
+    background: #294886 !important;
+    color:#fff;
+}

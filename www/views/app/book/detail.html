@@ -1,0 +1,68 @@
+<ion-view view-title="Detail Page" class="product-view">
+
+
+  <ion-content overflow-scroll="true">
+    <div class="product-card-content">
+      <div class="item item-image">
+        <pre-img ratio="_1_1" helper-class="main-image">
+          <img ng-src="{{product.cover}}" spinner-on-load>
+        </pre-img>
+      </div>
+
+      <div class="item item-body">
+        <h2 class="product-title">{{product.title}}</h2>
+          <a ng-href="tel:+1-1800-555-5555" style="display: none;">Call (03) 9533 1100</a></p>
+        <p class="product-price" ng-click="showAddToCartPopup(product)">{{ product.price ? '$'+product.price : 'Please Contact' }}</p>
+        <div>
+          <div>
+            <p class="product-like"><i class="icon ion-android-person"></i>{{product.author}}</p>
+            <p class="product-like"><i class="icon ion-android-phone-portrait"></i>{{product.phone_no}}</p>
+
+          </div>
+         </div>
+        <div>
+        <div>
+          <p class="product-like"><i class="icon ion-location"></i>{{product.address}}
+
+        </div>
+
+        </div>
+        </div>
+      <div class="item item-body">
+        <p class="product-description">{{product.buy_desc}}</p>
+      </div>
+    </div>
+  <div class="item item-divider shop-section-title">
+      <span class="title-copy">Related Products</span>
+    </div>
+    <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
+      <div ng-repeat="related_product in related_products" class="col col-50 shop-product-narrow-card" ui-sref="app.book-detail({productId: related_product.id})">
+          <div class="list card">
+          <div class="item item-image">
+            <pre-img ratio="_1_1" helper-class="main-image">
+              <img ng-src="{{related_product.cover}}" spinner-on-load>
+            </pre-img>
+          </div>
+          <div class="item item-body">
+            <h2 class="card-title">{{related_product.title}}</h2>
+            <p class="card-description"><b>${{related_product.price}}</b> - {{related_product.author}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+  <ion-tabs class="tabs-icon-top tabs-striped tabs-background-balanced tabs-color-light shop-tabs" style="bottom:1px;">
+
+      <ion-tab title="Phone" icon-on="ion-ios-telephone"  icon-off="ion-ios-telephone" class="active" ng-href="tel:+1-1800-555-5555"   >
+        <ion-nav-view name="shop-buysell" ng-href="tel:+1-1800-555-5555"></ion-nav-view>
+
+      </ion-tab>
+
+      <ion-tab title="Email" icon-on="ion-ios-email"  icon-off="ion-ios-email" class="active" style="font-size: 52px;">
+        <ion-nav-view name="Send Email" ></ion-nav-view>
+
+      </ion-tab>
+  </ion-tabs>
+
+</ion-view>

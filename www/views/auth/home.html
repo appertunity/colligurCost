@@ -1,0 +1,52 @@
+<ion-view class="welcome-view" cache-view="false">
+  <ion-content scroll="false">
+    <div class="right_xjr"> <span ng-if="$storage.uni_text" style="white-space: nowrap;width:200px;font-size: 11px;position: absolute;right:55px;top:14px;width: auto;">
+      {{$storage.uni_text}}</span>
+      <a class="icon-left ion-ios-location grayish"  ng-click="showPopup()">
+      <span class="btn-copy"></span>
+    </a></div>
+    <div class="top-content row">
+      <div class="app-copy col col-center" style="padding-top: 0px;">
+        <img ng-src="img/colligur.png" height="40" width="auto"  style="z-index: 1000000000">
+
+      </div>
+    </div>
+    <div class="bottom-content row" ng-init="modue='Buy and Sell'" style="height: auto;">
+      <div class="col col-bottom">
+        <div style="margin-top:-60px;">
+         <label class="item item-input item-select select-xjr">
+           <select ng-model="modules.value" ng-options="v for v in modules.values" style="width:180px;margin: auto;left:0px; ">
+           </select>
+          </label>
+
+        <a class="search-xjr button button-block icon-left ion-search"   ng-click="openFilter()">
+          <span class="btn-copy">SEARCH</span>
+        </a>
+        </div>
+          <div style="margin-top: 130px;">
+        <a class="google-sign-in button button-block icon-left ion-plus-circled "   ng-click="showPosting()">
+          <span class="btn-copy">PLACE AN AD</span>
+
+        </a>
+
+
+      <a class="facebook-sign-in button button-block icon-left ion-disc"  ng-click="showCategories()">
+          <span class="btn-copy">BROWSE CATEGORIES</span>
+        </a>
+            </div>
+        <div class="other-options-outer">
+          <a ng-show="false" animation="'fade'" ng-click="toggleHiddenActions()" class="other-options button button-clear button-block">
+            Show more
+          </a>
+          <div ng-cloak ng-show="show_hidden_actions" animation="'fade'" class="hidden-actions ng-cloak ng-hide">
+            <a class="twitter-sign-in button button-block icon-left ion-social-twitter" >
+              <span class="btn-copy">Twitter</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
